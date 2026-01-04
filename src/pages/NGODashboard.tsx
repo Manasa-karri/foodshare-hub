@@ -3,7 +3,9 @@ import { useFood } from '@/context/FoodContext';
 import StatCard from '@/components/StatCard';
 import FoodCard from '@/components/FoodCard';
 import ImpactCard from '@/components/ImpactCard';
+import LocationMap from '@/components/LocationMap';
 import { CheckCircle2, Clock, Users, Heart, UtensilsCrossed } from 'lucide-react';
+
 
 const NGODashboard: React.FC = () => {
   const { getNGOStats, getAvailableFoods, acceptFood } = useFood();
@@ -44,6 +46,14 @@ const NGODashboard: React.FC = () => {
           color="primary"
         />
       </div>
+
+      {/* Location Map */}
+<div className="mb-6">
+  <h2 className="text-lg font-semibold text-foreground mb-3">
+    Collection & Nearby Areas
+  </h2>
+  <LocationMap />
+</div>
 
       {/* Community Impact */}
       <div className="mb-6">
