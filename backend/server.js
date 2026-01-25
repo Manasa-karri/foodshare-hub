@@ -23,7 +23,10 @@ const server = http.createServer(app);
 connectDB();
 
 /* ================= MIDDLEWARE ================= */
-app.use(cors());
+app.use(cors({
+  origin: "http://localhost:8080", // frontend (Vite)
+  credentials: true
+}));
 app.use(express.json());
 
 /* ================= ROUTES ================= */
